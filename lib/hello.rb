@@ -1,6 +1,10 @@
 def hello_t(array)
-  array.length.times do |idx|
-    yield array[idx]
+  if block_given?
+    array.length.times do |idx|
+      yield array[idx]
+    end
+  else
+    puts "Hey! No block was given!"
   end
   array
 end
